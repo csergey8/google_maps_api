@@ -65,7 +65,14 @@
         coords: {
           lat: 50.463614,
           lng: 30.50714
-        }
+        },
+        content:'<h2>Red place</h2>'
+      });addMarker({
+        coords: {
+          lat: 50.463614,
+          lng: 30.51714
+        },
+        content:'<h2>White place</h2>'
       });
       addMarker({
         coords: {
@@ -85,6 +92,15 @@
         if(props.icon){
           marker.setIcon(props.icon);
         }
+
+        //Check for window info content
+        if(props.content){
+          var infoWindow = new google.maps.InfoWindow({
+            content: props.content});
+        }
+        marker.addListener('click', function() {
+          infoWindow.open(map, marker);
+      });
       };
     }
 
