@@ -54,33 +54,45 @@
       });
       */
 
-      addMarker({
+      //Array of markers
+
+      var markers = [
+        {
         coords: {
           lat: 50.453614,
           lng: 30.50714
         },
         icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
-      });
-      addMarker({
+      },
+        {
         coords: {
           lat: 50.463614,
           lng: 30.50714
         },
         content:'<h2>Red place</h2>'
-      });addMarker({
+      },
+        {
         coords: {
           lat: 50.463614,
           lng: 30.51714
         },
         content:'<h2>White place</h2>'
-      });
-      addMarker({
+      },
+        {
         coords: {
           lat: 50.472614,
           lng: 30.50914
         },
         icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
-      });
+      }];
+
+      //Loop through markers
+
+      for(i=0; i < markers.length; i++){
+        addMarker(markers[i]);
+      }
+
+
       //add marker function
       function addMarker(props) {
         var marker = new google.maps.Marker({
