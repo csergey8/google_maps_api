@@ -43,7 +43,17 @@
         map: map,
         icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
       });
+      //add info window
+      var infoWindow = new google.maps.InfoWindow({
+        content: '<h3>Good place</h3>'
+      });
+      marker.addListener('click', function() {
+      infoWindow.open(map, marker);
+      });
+
+
     }
+
   </script>
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASKGIb_GdrKm8jjzfFshEsmWXS0lU4DAw&callback=initMap" async defer></script>
