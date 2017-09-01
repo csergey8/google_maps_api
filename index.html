@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -10,6 +11,7 @@
       height: 600px;
       width: 100%;
     }
+
   </style>
 </head>
 
@@ -52,22 +54,43 @@
       });
       */
 
-      addMarker({ lat: 50.453614, lng: 30.50714 });
-      addMarker({ lat: 50.463614, lng: 30.50714 });
-      addMarker({ lat: 50.472614, lng: 30.50914 });
+      addMarker({
+        coords: {
+          lat: 50.453614,
+          lng: 30.50714
+        },
+        icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+      });
+      addMarker({
+        coords: {
+          lat: 50.463614,
+          lng: 30.50714
+        }
+      });
+      addMarker({
+        coords: {
+          lat: 50.472614,
+          lng: 30.50914
+        },
+        icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+      });
       //add marker function
-      function addMarker(coords) {
+      function addMarker(props) {
         var marker = new google.maps.Marker({
-          position:coords,
+          position: props.coords,
           map: map,
-          icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+          //icon: props.icon
         });
-
-
-      }
+        //Check for custom icon
+        if(props.icon){
+          marker.setIcon(props.icon);
+        }
+      };
     }
+
   </script>
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASKGIb_GdrKm8jjzfFshEsmWXS0lU4DAw&callback=initMap" async defer></script>
 </body>
+
 </html>
