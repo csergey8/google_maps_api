@@ -25,7 +25,7 @@
     function initMap() {
       //map options
       var options = {
-        zoom: 14,
+        zoom: 13,
         center: {
           lat: 50.45466,
           lng: 30.5238
@@ -34,7 +34,14 @@
       //new map object
       var map = new google.maps.Map(document.getElementById('map'), options);
 
-
+      //add market
+      var marker = new google.maps.Marker({
+        position: {
+          lat: 50.453614,
+          lng: 30.50714
+        },
+        map: map
+      });
     }
   </script>
 
