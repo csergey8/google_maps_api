@@ -33,7 +33,7 @@
       }
       //new map object
       var map = new google.maps.Map(document.getElementById('map'), options);
-
+      /*
       //add market
       var marker = new google.maps.Marker({
         position: {
@@ -50,10 +50,22 @@
       marker.addListener('click', function() {
       infoWindow.open(map, marker);
       });
+      */
+
+      addMarker({ lat: 50.453614, lng: 30.50714 });
+      addMarker({ lat: 50.463614, lng: 30.50714 });
+      addMarker({ lat: 50.472614, lng: 30.50914 });
+      //add marker function
+      function addMarker(coords) {
+        var marker = new google.maps.Marker({
+          position:coords,
+          map: map,
+          icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+        });
 
 
+      }
     }
-
   </script>
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASKGIb_GdrKm8jjzfFshEsmWXS0lU4DAw&callback=initMap" async defer></script>
